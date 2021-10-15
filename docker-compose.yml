@@ -156,7 +156,7 @@ services:
       - CARGO_HOME=/var/www/node-template/.cargo
     volumes:
       - ../../myrust/substrate-node-template:/var/www/node-template
-    command: bash -c "cargo +nightly build --release && ./target/release/node-template --dev --ws-external --rpc-external --rpc-cors=all --unsafe-rpc-external --rpc-methods=unsafe"
+    command: bash -c "cargo +nightly build --release && ./target/release/node-template --dev --ws-external --rpc-external --prometheus-external --rpc-cors=all --unsafe-rpc-external --rpc-methods=unsafe"
 
   prometheus:
     image: prom/prometheus:v2.30.2
