@@ -6,12 +6,12 @@ services:
     ports:
       - 5432:5432
     volumes:
-      - .data/postgres-old:/var/lib/postgresql/data
+      - .data/postgres-v0.23.2-alpha.1:/var/lib/postgresql/data
     environment:
       POSTGRES_PASSWORD: postgres
 
   subquery-node:
-    image: ronyang/bifrost-subql-node:v0.23.1-alpha.2
+    image: ronyang/bifrost-subql-node:v0.23.2-alpha.1
     # image: onfinality/subql-node:latest
     depends_on:
       - "postgres"
