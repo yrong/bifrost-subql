@@ -1,8 +1,9 @@
 import { SubstrateBlock, SubstrateEvent } from "@subql/types";
 import { BlockNumber, Balance, MessageId } from "@polkadot/types/interfaces";
 import { Vesting } from '../types/models';
-// import axios from 'axios';
-const axios = require('axios');
+import axiosOriginal from 'axios';
+import adapter from 'axios/lib/adapters/http';
+const axios = axiosOriginal.create({adapter});
 
 const NativeToken = JSON.stringify({ "native": "BNC" });
 
